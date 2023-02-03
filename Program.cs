@@ -1,22 +1,18 @@
-﻿string[] array =
+﻿Main();
+void Main()
 {
-    "a",
-    "bb",
-    "ccc",
-    "dddd",
-    "eeeee",
-    "z"
-};
- 
-var result = new string[array.Length];
-var realSize = 0;
-foreach (var value in array)
-{
-    if (value.Length <= 3)
+    Console.WriteLine("Введите размер массива");
+    int n = Convert.ToInt32(Console.ReadLine());
+    int size = n;
+    string[] array = new string[n];
+    for (int i = 0; i < n; i++)
     {
-        result[realSize] = value;
-        realSize++;
+        Console.WriteLine("Введите " + (i + 1) + " элемент массива из " + n);
+        array[i] = Console.ReadLine(); ;
+    }
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
     }
 }
- 
-Console.WriteLine(string.Join(Environment.NewLine, result, 0, realSize));
